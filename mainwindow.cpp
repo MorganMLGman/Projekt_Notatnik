@@ -114,3 +114,7 @@ QString MainWindow::pobierzNazwe(){
     podajNazwe.close();
     return nazwa;
 }
+
+void MainWindow::closeEvent(QCloseEvent * zamknij){
+    zamknij->ignore();
+}

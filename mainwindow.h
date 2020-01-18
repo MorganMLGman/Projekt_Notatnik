@@ -11,6 +11,9 @@
 #include "QFile"
 #include "QFileInfo"
 #include "QTabWidget"
+#include "QWidget"
+#include "QCloseEvent"
+#include "QMessageBox"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,6 +26,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    void closeEvent(QCloseEvent * zamknij);
 
 private slots:
     void on_dodajNowy_triggered();
