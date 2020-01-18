@@ -13,12 +13,21 @@
   <property name="windowTitle">
    <string>Notatnik</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QTabWidget" name="tabWidget">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="tabsClosable">
          <bool>true</bool>
         </property>
@@ -41,6 +50,9 @@
     </rect>
    </property>
    <widget class="QMenu" name="menuPlik">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>Plik</string>
     </property>
@@ -53,6 +65,9 @@
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="movable">
     <bool>false</bool>

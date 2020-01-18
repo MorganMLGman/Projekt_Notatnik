@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Ostrzeżenie</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">

@@ -31,6 +31,9 @@
   <property name="windowTitle">
    <string>Zamknij</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
   </property>

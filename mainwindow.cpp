@@ -116,5 +116,19 @@ QString MainWindow::pobierzNazwe(){
 }
 
 void MainWindow::closeEvent(QCloseEvent * zamknij){
-    zamknij->ignore();
+    bool czyWszystkoZapisane = true;
+    for(int i = 0; i<ileZakladek;i++){
+        QWidget *nowy = ui->tabWidget->widget(i);
+        Zakladka *nowa = dynamic_cast<Zakladka*>(nowy);
+        if(nowa->sprawdzCzyEdytowana()==1){
+            czyWszystkoZapisane = false;
+        }
+    }
+    if(czyWszystkoZapisane == false){
+        zamknij->ignore();
+    }
+    else {
+        zamknij->accept();
+    }
+
 }
