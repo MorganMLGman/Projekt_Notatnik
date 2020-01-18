@@ -1,0 +1,44 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include "QDebug"
+#include "zakladka.h"
+#include "ostrzezenie.h"
+#include "pytanietaknie.h"
+#include "pytanieodpowiedz.h"
+#include "QFileDialog"
+#include "QFile"
+#include "QFileInfo"
+#include "QTabWidget"
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_dodajNowy_triggered();
+
+    void on_otworzPlik_triggered();
+
+    void on_zapiszPlik_triggered();
+
+    void on_tabWidget_tabCloseRequested(int index);
+
+    void zapiszPlik(int indeks);
+
+private:
+    Ui::MainWindow *ui;
+    int ileZakladek;
+    void dodajNowaZakladka();
+
+};
+#endif // MAINWINDOW_H
