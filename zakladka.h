@@ -20,6 +20,7 @@ public:
     const QString &pobierzSciezke();
     void ustawSciezke(const QString &sciezkaPliku);
     QString pobierzTekst(bool rodzaj);
+    void dodajTekst(QString tekst);
 
 private slots:
     void on_textEdit_textChanged();

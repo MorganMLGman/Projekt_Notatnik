@@ -33,12 +33,14 @@ private slots:
 
     void on_tabWidget_tabCloseRequested(int index);
 
-    void zapiszPlik(int indeks);
 
 private:
     Ui::MainWindow *ui;
     int ileZakladek;
-    void dodajNowaZakladka();
+    Zakladka* dodajNowaZakladka(QString nazwa);
+    QString pobierzNazwe();
+    void zapiszPlik(int indeks);
+    void otworzPlik();
 
 };
 #endif // MAINWINDOW_H

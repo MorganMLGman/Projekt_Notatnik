@@ -19,29 +19,30 @@ MainWindow::~MainWindow()
 void MainWindow::on_dodajNowy_triggered()
 {
     qDebug("NOWY");
-    dodajNowaZakladka();
+    dodajNowaZakladka(pobierzNazwe());
 }
 
 void MainWindow::on_otworzPlik_triggered()
 {
     qDebug("OTWÓRZ");
+    otworzPlik();
 }
 
 void MainWindow::on_zapiszPlik_triggered()
 {
     qDebug("ZAPISZ");
+    if(ileZakladek <=0){
+        return;
+    }
     zapiszPlik(ui->tabWidget->currentIndex());
 }
 
-void MainWindow::dodajNowaZakladka(){
-    pytanieOdpowiedz podajNazwe;
-    podajNazwe.exec();
-    QString nazwa = podajNazwe.on_buttonBox_accepted();
-    podajNazwe.close();
+Zakladka* MainWindow::dodajNowaZakladka(QString nazwa){
     ileZakladek++;
     Zakladka *nowa = new Zakladka;
     ui->tabWidget->addTab(nowa, nazwa);
     ui->tabWidget->setCurrentWidget(nowa);
+    return nowa;
 }
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
@@ -88,4 +89,28 @@ void MainWindow::zapiszPlik(int indeks){
     QFileInfo nazwa(plik);
     ui->tabWidget->setTabText(ui->tabWidget->currentIndex(), nazwa.fileName());
     obecna->zostalZapisany();
+}
+
+void MainWindow::otworzPlik(){
+    QString filtry("Plik tekstowy (*.txt);;Plik wykonywalny (*.bat);;Strona HTML (*.html);;Wszystkie pliki (*.*)");
+    QString sciezka = QFileDialog::getOpenFileName(this,"Otwórz plik", QDir::currentPath(),filtry);
+    QFile plik(sciezka);
+
+    if(!plik.open(QIODevice::ReadOnly|QFile::Text)){
+        qDebug("Błąd podczas otwierania pliku");
+        return;
+    }
+    QFileInfo nazwa(plik);
+    Zakladka *nowa = dodajNowaZakladka(nazwa.fileName());
+    QTextStream wejscie(&plik);
+    nowa->dodajTekst(wejscie.readAll());
+    nowa->zostalZapisany();
+}
+
+QString MainWindow::pobierzNazwe(){
+    pytanieOdpowiedz podajNazwe;
+    podajNazwe.exec();
+    QString nazwa = podajNazwe.on_buttonBox_accepted();
+    podajNazwe.close();
+    return nazwa;
 }

@@ -44,3 +44,7 @@ QString Zakladka::pobierzTekst(bool rodzaj){
         return ui->textEdit->toHtml();
     }
 }
+
+void Zakladka::dodajTekst(QString tekst){
+    ui->textEdit->append(tekst);
+}
