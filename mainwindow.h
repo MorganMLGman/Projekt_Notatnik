@@ -15,6 +15,7 @@
 #include "QCloseEvent"
 #include "QMessageBox"
 #include "QFontDialog"
+#include "QProcess"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -48,6 +49,8 @@ private slots:
     void on_actionSrebrny_triggered();
 
     void on_actionDomy_lny_triggered();
+
+    void on_actionOpinia_triggered();
 
 private:
     Ui::MainWindow *ui;

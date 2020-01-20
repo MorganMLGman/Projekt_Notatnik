@@ -46,3 +46,5 @@ RESOURCES += \
     darkStyle.qrc \
     ikony.qrc \
     qDarkStyle.qrc
+
+DISTFILES +=

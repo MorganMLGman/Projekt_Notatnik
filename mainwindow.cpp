@@ -198,3 +198,9 @@ void MainWindow::on_actionDomy_lny_triggered()
     qApp->setStyle(QApplication::style());
     qApp->setStyleSheet(nullptr);
 }
+
+void MainWindow::on_actionOpinia_triggered()
+{
+    system("start chrome.exe gmail.com");
+
+}

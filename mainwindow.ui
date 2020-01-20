@@ -80,9 +80,16 @@
     </property>
     <addaction name="zmienCzcionke"/>
    </widget>
+   <widget class="QMenu" name="menuPomoc">
+    <property name="title">
+     <string>Pomoc</string>
+    </property>
+    <addaction name="actionOpinia"/>
+   </widget>
    <addaction name="menuPlik"/>
    <addaction name="menuEdycja_2"/>
    <addaction name="menuEdycja"/>
+   <addaction name="menuPomoc"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -162,6 +169,11 @@
   <action name="actionDomy_lny">
    <property name="text">
     <string>Domyślny</string>
+   </property>
+  </action>
+  <action name="actionOpinia">
+   <property name="text">
+    <string>Opinia</string>
    </property>
   </action>
  </widget>
