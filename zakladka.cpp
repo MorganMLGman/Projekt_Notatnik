@@ -48,3 +48,8 @@ QString Zakladka::pobierzTekst(bool rodzaj){
 void Zakladka::dodajTekst(QString tekst){
     ui->textEdit->append(tekst);
 }
+
+void Zakladka::zmienRozmiarCzcionki(){
+    ui->textEdit->selectAll();
+    ui->textEdit->setFont(QFontDialog::getFont(nullptr,ui->textEdit->font()));
+}

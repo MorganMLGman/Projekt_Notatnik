@@ -14,6 +14,7 @@
 #include "QWidget"
 #include "QCloseEvent"
 #include "QMessageBox"
+#include "QFontDialog"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -40,6 +41,14 @@ private slots:
     void on_tabWidget_tabCloseRequested(int index);
 
 
+    void on_zmienCzcionke_triggered();
+
+    void on_actionCiemny_triggered();
+
+    void on_actionSrebrny_triggered();
+
+    void on_actionDomy_lny_triggered();
+
 private:
     Ui::MainWindow *ui;
     int ileZakladek;
@@ -47,6 +56,5 @@ private:
     QString pobierzNazwe();
     void zapiszPlik(int indeks);
     void otworzPlik();
-
 };
 #endif // MAINWINDOW_H

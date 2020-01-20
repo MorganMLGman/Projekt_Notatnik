@@ -60,7 +60,29 @@
     <addaction name="otworzPlik"/>
     <addaction name="zapiszPlik"/>
    </widget>
+   <widget class="QMenu" name="menuEdycja">
+    <property name="title">
+     <string>Ustawienia</string>
+    </property>
+    <widget class="QMenu" name="menuMotywy">
+     <property name="title">
+      <string>Motywy</string>
+     </property>
+     <addaction name="actionDomy_lny"/>
+     <addaction name="actionCiemny"/>
+     <addaction name="actionSrebrny"/>
+    </widget>
+    <addaction name="menuMotywy"/>
+   </widget>
+   <widget class="QMenu" name="menuEdycja_2">
+    <property name="title">
+     <string>Edycja</string>
+    </property>
+    <addaction name="zmienCzcionke"/>
+   </widget>
    <addaction name="menuPlik"/>
+   <addaction name="menuEdycja_2"/>
+   <addaction name="menuEdycja"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -116,6 +138,30 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="zmienCzcionke">
+   <property name="icon">
+    <iconset resource="ikony.qrc">
+     <normaloff>:/img/font.png</normaloff>:/img/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zmień czcionkę</string>
+   </property>
+  </action>
+  <action name="actionCiemny">
+   <property name="text">
+    <string>Ciemny</string>
+   </property>
+  </action>
+  <action name="actionSrebrny">
+   <property name="text">
+    <string>Srebrny</string>
+   </property>
+  </action>
+  <action name="actionDomy_lny">
+   <property name="text">
+    <string>Domyślny</string>
    </property>
   </action>
  </widget>

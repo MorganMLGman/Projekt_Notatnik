@@ -105,6 +105,7 @@ void MainWindow::otworzPlik(){
     QTextStream wejscie(&plik);
     nowa->dodajTekst(wejscie.readAll());
     nowa->zostalZapisany();
+    plik.close();
 }
 
 QString MainWindow::pobierzNazwe(){
@@ -125,10 +126,75 @@ void MainWindow::closeEvent(QCloseEvent * zamknij){
         }
     }
     if(czyWszystkoZapisane == false){
-        zamknij->ignore();
+        QMessageBox::StandardButton odpowiedz = QMessageBox::question(this, "Wyjście", "Masz niezapisane pliki, zapisać?",QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes, QMessageBox::Yes);
+        if(odpowiedz == QMessageBox::No){
+            zamknij->accept();
+        }
+        else if(odpowiedz == QMessageBox::Cancel){
+            zamknij->ignore();
+        }
+        else{
+            for(int i =0; i<ileZakladek; i++){
+                QWidget *nowy = ui->tabWidget->widget(i);
+                Zakladka *nowa = dynamic_cast<Zakladka*>(nowy);
+                if(nowa->sprawdzCzyEdytowana()==1){
+                    ui->tabWidget->setCurrentIndex(i);
+                    zapiszPlik(i);
+                }
+            }
+            zamknij->accept();
+        }
     }
     else {
         zamknij->accept();
     }
 
+}
+
+
+void MainWindow::on_zmienCzcionke_triggered()
+{
+    if(ileZakladek>0){
+        QWidget *nowy = ui->tabWidget->currentWidget();
+        Zakladka *nowa = dynamic_cast<Zakladka*>(nowy);
+        nowa->zmienRozmiarCzcionki();
+    }
+}
+
+void MainWindow::on_actionCiemny_triggered()
+{
+    QFile f(":qdarkstyle/style.qss");
+    if (!f.exists())
+    {
+        return;
+    }
+    else
+    {
+        f.open(QFile::ReadOnly | QFile::Text);
+        QTextStream ts(&f);
+        qApp->setStyleSheet(ts.readAll());
+    }
+}
+
+void MainWindow::on_actionSrebrny_triggered()
+{
+    QFile f(":darkstyle/darkstyle.qss");
+    if (!f.exists())
+    {
+        qDebug("BŁĄD");
+        return;
+    }
+    else
+    {
+        qDebug("POWODZENIE");
+        f.open(QFile::ReadOnly | QFile::Text);
+        QTextStream ts(&f);
+        qApp->setStyleSheet(ts.readAll());
+    }
+}
+
+void MainWindow::on_actionDomy_lny_triggered()
+{
+    qApp->setStyle(QApplication::style());
+    qApp->setStyleSheet(nullptr);
 }
