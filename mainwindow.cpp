@@ -201,6 +201,6 @@ void MainWindow::on_actionDomy_lny_triggered()
 
 void MainWindow::on_actionOpinia_triggered()
 {
-    system("start chrome.exe gmail.com");
-
+    info informacja;
+    informacja.exec();
 }

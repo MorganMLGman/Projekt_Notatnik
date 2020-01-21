@@ -15,7 +15,7 @@
 #include "QCloseEvent"
 #include "QMessageBox"
 #include "QFontDialog"
-#include "QProcess"
+#include "info.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    info.cpp \
     main.cpp \
     mainwindow.cpp \
     ostrzezenie.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
     zakladka.cpp
 
 HEADERS += \
+    info.h \
     mainwindow.h \
     ostrzezenie.h \
     pytanieodpowiedz.h \
@@ -31,6 +33,7 @@ HEADERS += \
     zakladka.h
 
 FORMS += \
+    info.ui \
     mainwindow.ui \
     ostrzezenie.ui \
     pytanieodpowiedz.ui \

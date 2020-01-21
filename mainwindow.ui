@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Notatnik</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="ikony.qrc">
+    <normaloff>:/img/Icon-notepad.png</normaloff>:/img/Icon-notepad.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>
@@ -173,7 +177,7 @@
   </action>
   <action name="actionOpinia">
    <property name="text">
-    <string>Opinia</string>
+    <string>Informacje</string>
    </property>
   </action>
  </widget>
