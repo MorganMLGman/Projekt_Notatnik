@@ -204,3 +204,8 @@ void MainWindow::on_actionOpinia_triggered()
     info informacja;
     informacja.exec();
 }
+
+void MainWindow::on_actionWyj_cie_triggered()
+{
+    close();
+}

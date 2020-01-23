@@ -63,6 +63,7 @@
     <addaction name="dodajNowy"/>
     <addaction name="otworzPlik"/>
     <addaction name="zapiszPlik"/>
+    <addaction name="actionWyj_cie"/>
    </widget>
    <widget class="QMenu" name="menuEdycja">
     <property name="title">
@@ -178,6 +179,14 @@
   <action name="actionOpinia">
    <property name="text">
     <string>Informacje</string>
+   </property>
+  </action>
+  <action name="actionWyj_cie">
+   <property name="text">
+    <string>Wyjście</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
  </widget>

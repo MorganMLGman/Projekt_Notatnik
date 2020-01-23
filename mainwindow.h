@@ -52,6 +52,8 @@ private slots:
 
     void on_actionOpinia_triggered();
 
+    void on_actionWyj_cie_triggered();
+
 private:
     Ui::MainWindow *ui;
     int ileZakladek;
